@@ -19,8 +19,8 @@ public class RuleValidator implements ConstraintValidator<ValidRule, String> {
        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
        engine.put("box",box);
        try {
-           engine.eval(script);
-       } catch (ScriptException e) {
+           boolean result = (boolean) engine.eval(script);
+       } catch (ScriptException | ClassCastException e) {
            log.warn("Invalid Rule: " + script);
            return false;
        }

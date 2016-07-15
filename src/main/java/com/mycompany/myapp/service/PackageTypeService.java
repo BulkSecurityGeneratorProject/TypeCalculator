@@ -73,11 +73,13 @@ public class PackageTypeService {
     }
 
     public PackageType findMatchPacket(Box box) {
-        return packageTypeRepository.findAll().stream().filter(p -> p.matches(box)).findFirst().orElseThrow(() -> new PackageNotFoundException());
+        return packageTypeRepository.findAll().stream().filter(p -> p.matches(box)).findFirst().orElseThrow(() -> new PackageNotFoundException("Kein passendes Produkt gefunden"));
     }
 
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public static class PackageNotFoundException extends RuntimeException {
-
+        public PackageNotFoundException(String message) {
+            super(message);
+        }
     }
 }
