@@ -1,0 +1,62 @@
+<div>
+    <h2 translate="myappApp.packageType.home.title">Package Types</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="package-type.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="myappApp.packageType.home.createLabel">
+                        Create new Package Type
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="myappApp.packageType.type">Type</span></th>
+                    <th><span translate="myappApp.packageType.name">Name</span></th>
+                    <th><span translate="myappApp.packageType.description">Description</span></th>
+                    <th><span translate="myappApp.packageType.rule">Rule</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="packageType in vm.packageTypes track by packageType.id">
+                    <td><a ui-sref="package-type-detail({id:packageType.id})">{{packageType.id}}</a></td>
+                    <td>{{packageType.type}}</td>
+                    <td>{{packageType.name}}</td>
+                    <td>{{packageType.description}}</td>
+                    <td>{{packageType.rule}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="package-type-detail({id:packageType.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="package-type.edit({id:packageType.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="package-type.delete({id:packageType.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

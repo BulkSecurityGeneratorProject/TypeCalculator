@@ -1,0 +1,13 @@
+version: '2'
+services:
+    myapp-mariadb:
+        container_name: myapp-mariadb
+        image: mariadb:10.1.14
+        # volumes:
+        #     - ~/volumes/jhipster/myapp/mysql/:/var/lib/mysql/
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=myapp
+        ports:
+            - 3306:3306

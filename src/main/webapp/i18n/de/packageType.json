@@ -1,0 +1,25 @@
+{
+    "myappApp": {
+        "packageType" : {
+            "home": {
+                "title": "Package Types",
+                "createLabel": "Package Type erstellen",
+                "createOrEditLabel": "Package Type erstellen oder bearbeiten",
+                "search": "Suche nach Package Type"
+            },
+            "created": "Package Type erstellt mit ID {{ param }}",
+            "updated": "Package Type aktualisiert mit ID {{ param }}",
+            "deleted": "Package Type gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Package Type {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Package Type"
+            },
+            "type": "Type",
+            "name": "Name",
+            "description": "Description",
+            "rule": "Rule"
+        }
+    }
+}
